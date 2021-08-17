@@ -1,0 +1,24 @@
+{
+  "name": "Ecomerce-tailwind-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mazharul-haq/Ecomerce-tailwind-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mazharul-haq/Ecomerce-tailwind-template/issues"
+  },
+  "homepage": "https://github.com/Mazharul-haq/Ecomerce-tailwind-template#readme",
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "tailwindcss": "^2.2.7"
+  }
+}
