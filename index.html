@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
     <header class="bg-white shadow-sm py-2">
@@ -140,11 +140,32 @@
     <nav class="bg-gray-800 text-white">
       <div class="container flex">
         <!--All Categories-->
-        <div class="items-center bg-primary flex cursor-pointer px-8 py-4">
+        <div class="items-center bg-primary flex cursor-pointer px-8 py-4 relative group">
           <span class="text-white">
             <i class="fas fa-bars"></i>
           </span>
           <span class="capitalize ml-2 text-white"> All Categories</span>
+          <!--Dropsdown-->
+          <div class="absolute top-full left-0 w-full  text-red-500 bg-white shadow-md   py-3 divide-y divide-dashed divide-gray-200 opacity-0 group-hover:opacity-100 transition delay-300 invisible group-hover:visible">
+            <a href="" class="flex items-center py-3 px-3">
+              <i class="fas fa-book mx-4 "></i>
+              <span class=" text-gray-800">Poem </span>
+            </a>
+            <a href="" class="flex items-center py-3 px-3">
+              <i class="fas fa-book mx-4 "></i>
+              <span class=" text-gray-800">Poem </span>
+            </a>
+            <a href="" class="flex items-center py-3 px-3">
+              <i class="fas fa-book mx-4 "></i>
+              <span class=" text-gray-800">Poem </span>
+            </a>
+            <a href="" class="flex items-center py-3 px-3">
+              <i class="fas fa-book mx-4 "></i>
+              <span class=" text-gray-800">Poem </span>
+            </a>
+            
+          </div>
+          <!--Dropdown-end-->
         </div>
         <!--All Categories End-->
 
