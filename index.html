@@ -5,30 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
   </head>
-  <body class="bg-gray-50">
-    <header class=" bg-white shadow-sm py-4">
-        <div class="container flex justify-between items-center">
-            <!-- logo -->
-            <a href="#">
-                <img src="img/logo.png" class="w-32 " alt="">
-            </a>
+  <body>
+    <header class="bg-white shadow-sm py-2">
+      <div class="container flex justify-between items-center">
+        <!-- logo -->
+        <a href="#">
+          <img src="img/logo2.png" class="w-32" alt="" />
+        </a>
 
-
-            <!--SearchBar-->
-            <div class="w-full max-w-xl relative">
-                <span class=" absolute left-4 top-3 text-lg text-gray-400">
-                    <i class=" fas fa-search"></i>
-                </span>
-            </div>
-
-            <!--Icons-->
-
+        <!--SearchBar-->
+        <div class="w-full max-w-xl relative flex">
+          <span class="absolute left-4 top-3 text-lg text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input
+            type="text"
+            class="
+              w-full
+              border border-primary
+              pl-12
+              py-3
+              pr-3
+              border-r-0
+              rounded-l-md
+              focus:outline-none
+            "
+          />
+          <button
+            class="
+              bg-primary
+              border border-primary
+              text-white
+              rounded-r-md
+              px-2
+              border-l-0
+              hover:bg-transparent hover:text-primary
+              transition
+            "
+          >
+            Search
+          </button>
         </div>
 
-    </header>
+        <!--Icons-->
+        <div class="items-center flex space-x-4">
+          <a
+            href="#"
+            class="
+              relative
+              text-center text-gray-700
+              hover:text-primary
+              transition
+            "
+          >
+            <div class="text-2xl">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="text-xs leading-3">Wishlist</div>
+            <span
+              class="
+                text-xs
+                rounded-full
+                right-0
+                -top-1
+                items-center
+                justify-center
+                absolute
+                text-white
+                bg-primary
+                w-5
+                h-5
+              "
+              >7</span
+            >
+          </a>
 
+          <a
+            href="#"
+            class="
+              relative
+              text-center text-gray-700
+              hover:text-primary
+              transition
+            "
+          >
+            <div class="text-2xl">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="text-xs leading-3">Cart</div>
+            <span
+              class="
+                text-xs
+                rounded-full
+                -right-3
+                -top-1
+                items-center
+                justify-center
+                absolute
+                text-white
+                bg-primary
+                w-5
+                h-5
+              "
+              >7</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="
+              relative
+              text-center text-gray-700
+              hover:text-primary
+              transition
+            "
+          >
+            <div class="text-2xl">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="text-xs leading-3">User</div>
+          </a>
+        </div>
+      </div>
+    </header>
+    <nav class="bg-gray-800 text-white">
+      <div class="container flex">
+        <!--All Categories-->
+        <div class="items-center bg-primary flex cursor-pointer px-8 py-4">
+          <span class="text-white">
+            <i class="fas fa-bars"></i>
+          </span>
+          <span class="capitalize ml-2 text-white"> All Categories</span>
+        </div>
+        <!--All Categories End-->
+
+        <!--Link -->
+        <div class="flex justify-between flex-grow pl-12 items-center">
+        <div class=" flex  items-center text-white  space-x-6 ">
+            <a href="" class=" ">Home</a>
+            <a href="">About Us</a>
+            <a href="">Contact</a>
+        </div>
+        <a href="#" class=" text-white ">Login/Register</a>
+      </div>
+      </div>
+    </nav>
   </body>
 </html>
