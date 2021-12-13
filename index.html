@@ -1,770 +1,213 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="dist/style.css" />
-  <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-  />
-
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mother{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+        }
+        .container{
+            border: 1px solid gray;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            padding: 10px;
+            margin: 10px;
+        }
+      input[type=text]{
+            border: none;
+            text-align: center;
+            width: 40px;
+            pointer-events: none;
+            
+        }
+       
+    </style>
 </head>
-<body class="bg-gray-200">
-<header class="bg-white shadow-sm py-2">
-  <div class="container flex justify-between items-center">
-    <!-- logo -->
-    <a href="#">
-      <img src="img/logo2.png" class="w-32" alt="" />
-    </a>
-
-    <!--SearchBar-->
-    <div class="w-full max-w-xl relative flex">
-          <span class="absolute left-4 top-3 text-lg text-gray-400">
-            <i class="fas fa-search"></i>
-          </span>
-      <input
-              type="text"
-              class="
-              w-full
-              border border-primary
-              pl-12
-              py-3
-              pr-3
-              border-r-0
-              rounded-l-md
-              focus:outline-none
-            "
-      />
-      <button
-              class="
-              bg-primary
-              border border-primary
-              text-white
-              rounded-r-md
-              px-2
-              border-l-0
-              hover:bg-transparent hover:text-primary
-              transition
-            "
-      >
-        Search
-      </button>
+<body>
+    <div class="mother">
+        <div class="container" >
+    <div class="a1" id="node0">
+        <input type="range" id="a0" name="rangeInput" min="0" max="100"  onchange="updateTextInput(this);" value="100">
+        <input type="text" id="aa0" value="">
+       
+    </div> 
+    <div class="a1" id="node1">
+        <input type="range" id="a1" name="rangeInput" min="0" max="100" onchange="updateTextInput(this);" value="0">
+    <input type="text" id="aa1" value="">
+    <button onclick="deleteElement(this);">Delete</button>
     </div>
-
-    <!--Icons-->
-    <div class="items-center flex space-x-4">
-      <a
-              href="#"
-              class="
-              relative
-              text-center text-gray-700
-              hover:text-primary
-              transition
-            "
-      >
-        <div class="text-2xl">
-          <i class="fas fa-heart"></i>
-        </div>
-        <div class="text-xs leading-3">Wishlist</div>
-        <span
-                class="
-                text-xs
-                rounded-full
-                right-0
-                -top-1
-                items-center
-                justify-center
-                absolute
-                text-white
-                bg-primary
-                w-5
-                h-5
-              "
-        >7</span
-        >
-      </a>
-
-      <a
-              href="#"
-              class="
-              relative
-              text-center text-gray-700
-              hover:text-primary
-              transition
-            "
-      >
-        <div class="text-2xl">
-          <i class="fas fa-shopping-bag"></i>
-        </div>
-        <div class="text-xs leading-3">Cart</div>
-        <span
-                class="
-                text-xs
-                rounded-full
-                -right-3
-                -top-1
-                items-center
-                justify-center
-                absolute
-                text-white
-                bg-primary
-                w-5
-                h-5
-              "
-        >7</span
-        >
-      </a>
-
-      <a
-              href="#"
-              class="
-              relative
-              text-center text-gray-700
-              hover:text-primary
-              transition
-            "
-      >
-        <div class="text-2xl">
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="text-xs leading-3">User</div>
-      </a>
+    <div class="a2" id="node2">
+        <input type="range" id="a2" name="rangeInput" min="0" max="100" onchange="updateTextInput(this);" value="0">
+        <input type="text" id="aa2" value="">
+        <button onclick="deleteElement(this);">Delete</button>
     </div>
-  </div>
-</header>
-<nav class="bg-gray-800 text-white">
-  <div class="container flex">
-    <!--All Categories-->
-    <div class="items-center bg-primary flex cursor-pointer px-8 py-4 relative group">
-          <span class="text-white">
-            <i class="fas fa-bars"></i>
-          </span>
-      <span class="capitalize ml-2 text-white"> All Categories</span>
-      <!--Dropsdown-->
-      <div class="absolute top-full left-0 w-full  text-red-500 bg-white shadow-md   py-3 divide-y divide-dashed divide-gray-200 opacity-0 group-hover:opacity-100 transition delay-300 invisible group-hover:visible">
-        <a href="" class="flex items-center py-3 px-3">
-          <i class="fas fa-book mx-4 "></i>
-          <span class=" text-gray-800">Poem </span>
-        </a>
-        <a href="" class="flex items-center py-3 px-3">
-          <i class="fas fa-book mx-4 "></i>
-          <span class=" text-gray-800">Poem </span>
-        </a>
-        <a href="" class="flex items-center py-3 px-3 text-gray-800 hover:bg-gray-800 hover:text-blue-50">
-          <i class="fas fa-book mx-4 "></i>
-          <span class="  hover:text-blue-50">Poem </span>
-        </a>
-        <a href="" class="flex items-center py-3 px-3">
-          <i class="fas fa-book mx-4 "></i>
-          <span class=" text-gray-800">Poem </span>
-        </a>
-
-      </div>
-      <!--Dropdown-end-->
+    <div class="a3" id="node3">
+    
+        <input type="range" id="a3" name="rangeInput" min="0" max="100" onchange="updateTextInput(this);" value="0">
+        <input type="text" id="aa3" value="">
+        <button onclick="deleteElement(this);">Delete</button>
     </div>
-    <!--All Categories End-->
-
-    <!--Link -->
-    <div class="flex justify-between flex-grow pl-12 items-center">
-      <div class=" flex  items-center text-white  space-x-6 ">
-        <a href="" class=" ">Home</a>
-        <a href="">About Us</a>
-        <a href="">Contact</a>
-      </div>
-      <a href="#" class=" text-white ">Login/Register</a>
-    </div>
-  </div>
-</nav>
-<!--Banner-->
-<div class="bg-cover bg-no-repeat bg-center py-36 " style="background-image: url('img/banner1.jpg'); ">
-  <div class="container">
-    <h1 class=" font-medium text-6xl text-gray-800 mb-4 capitalize">Best Fruits Shop</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis dolorembr <br>
-      reiciendis temporibus explicabo nobis.</p>
-    <button class="p-3 bg-primary border rounded-md mt-4 text-white border-primary hover:bg-white hover:text-primary transition delay-300">Start Buying</button>
-  </div>
-</div>
-<!--Banner End-->
-<div class="feature-wrapper grid grid-cols-3 gap-6 mx-auto w-10/12 justify-center py-16  ">
-  <div class="single-wrapper flex items-center justify-center  py-6 bg-gray-50 border border-primary shadow-xl rounded-sm gap-5">
-    <img src="img/delivary-van.svg" class="w-12 h-12 object-cover text-primary">
-    <div>
-      <h4 class="font-bold text-center">Free Delivery </h4>
-      <p>Order over 200$</p>
-    </div>
-  </div>
-
-  <div class="single-wrapper flex items-center justify-center px-3 py-6 bg-gray-50 border border-primary rounded-sm gap-5">
-    <img src="img/delivary-van.svg" class="w-12 h-12 object-cover text-primary">
-    <div>
-      <h4 class="font-bold text-center">Free Delivery </h4>
-      <p>Order over 200$</p>
-    </div>
-  </div>
-
-  <div class="single-wrapper flex items-center justify-center px-3 py-6 bg-gray-50 border border-primary rounded-sm gap-5">
-    <img src="img/delivary-van.svg" class="w-12 h-12 object-cover text-primary">
-    <div>
-      <h4 class="font-bold text-center">Free Delivery </h4>
-      <p>Order over 200$</p>
-    </div>
-  </div>
-
-</div>
-
-<!--End features-->
-
-<!--Shop By Category-->
-<div class="container py-16 ">
-  <h1 class="font-bold text-4xl uppercase  mb-4 text-gray-800">Shop By Categories</h1>
-
-
-  <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 lg:gap-3 lg:px-3 sm:gap-0 gap-6 py-3">
-    <!--Single Category-->
-
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
+    <div class="a4" id="node4">
+        <input type="range" id="a4" name="rangeInput" min="0" max="100" onchange="updateTextInput(this);" value="0">
+        <input type="text" id="aa4" value="">
+        <button onclick="deleteElement(this);">Delete</button>
+    </div> 
+         </div>
+         
 
 
     </div>
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
 
 
-    </div>
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
 
 
-    </div>
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
-
-
-    </div>
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
-
-
-    </div>
-    <div class="relative overflow-hidden  group">
-      <img src="img/banner1.jpg" alt="">
-      <a href="#" class="absolute inset-0 flex items-center justify-center text-center text-white text-xl font-medium bg-opacity-40 group-hover:bg-opacity-60 group-hover:text-2xl transition group-hover:bg-black
-">Category 1</a>
-
-
-    </div>
-  </div>
-</div>
-<!--Shop By Category End -->
-
-<!--Shop Product-->
-<div class="container pb-16">
-  <h1 class="text-3xl font-semibold uppercase mb-4"> Top new arrival</h1>
-  <!--Product Wrapper-->
-  <div class="grid grid-cols-4 gap-3">
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-<!--      Product Image-->
-      <div class="relative group">
-        <img src="img/product/banana.jpg" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-        <!--      Product Image-->
-
-        <!--Product Price &Info-->
-        <div class="product-info">
-          <div class="pt-4 pb-2 px-4">
-            <a href="">
-              <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-            </a>
-            <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-              <p class="text-xl font-semibold text-gray-800 ">$13</p>
-              <p class="text-sm text-gray-600 line-through">$13</p>
-            </div>
-
-          </div>
-        </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-        <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="img/product/banana.jpg" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?mango" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Mango </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$12</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?almond" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Almond </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?fruits,fruit" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?fruits,fruit" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-
-  </div>
-  <!--Product Wrapper End-->
   
-</div>
-<!--Shop Product End-->
+    <script src="https://cdn.jsdelivr.net/npm/linkifyjs@3.0.3/dist/linkify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/linkify-html@3.0.3/dist/linkify-html.min.js"></script>
+    <script>
+        function deleteElement(obj)
+        {
+            alert("Do you want to delete this?")
+            let y=obj.parentElement.id;
+            let element=document.getElementById(y).remove();
+            initialStage()
+            updateAllvalue()
+           
+           
+        }
+      
+        function initialStage()
+        {
+            document.getElementById('a0').value=100;
+            for(let i=1;i<5;i++)
+            {
+               
+                let z='a'+i;
+                let w= document.getElementById(z);
+                if(w!=null){
+                    w.value=0
+                }
+            }
+        }
+        var all=[];
+        function updateAllvalue(){
+            for(let a=0 ;a<5;a++)
+        {
+            let x='a'+a;
+            let y=document.getElementById(x);
+            if(y!=null)
+            {
+                all[a]=y.value;
+                let w='a'+x;
+                document.getElementById(w).value=y.value+'%';
 
-<!--Shop Product-->
-<div class="container pb-16">
-  <h1 class="text-3xl font-semibold uppercase mb-4"> Discounted</h1>
-  <!--Product Wrapper-->
-  <div class="grid grid-cols-4 gap-3">
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="img/product/banana.jpg" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
+            }
+          
+           
+        }
+        }
+        updateAllvalue();
+     
+   
 
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
 
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
+        function updateTextInput(obj) {
+            var obje=obj;
+            var idNum=obj.id[1];
+             idNum=Number(idNum)
+             var next=nextId(obj.id);
+            var nextObj=document.getElementById(next);
+           
+           
+             var change=obj.value-all[idNum];
+            // var diff=nextObj.value-change;
+        
+                // if change minus mean komaichi...
+                // if change positive mean barachi..
 
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="img/product/banana.jpg" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
+            while(change!=0)
+            {
+                console.log(nextObj.id)
+                var w=nextObj.value;
+                if(change > 0){ /// komate hobe
+                    w=Number(w-change);
+                    if(w < 0){
+                        nextObj.value = 0;
+                        change = Number(Math.abs(w));
+                        updateAllvalue();
+                    }else{
+                        nextObj.value = Number(nextObj.value - change);
+                        change = 0;
+                        updateAllvalue();
+                    }
+                   
+                }else{ /// barate hobe
+                   // alert(nextObj.value);
+                    //alert(Math.abs(change));
+                    nextObj.value = Number(nextObj.value - change);
+                    change = 0;
+                   updateAllvalue();
+                   
+                    //alert(nextObj.value);
+                    //w = Number(w+change)0
+                }
+                
+             
+                  let y=nextId(nextObj.id);
+              nextObj=document.getElementById(y);
+                 
+                    
+               
+            }
+        
+           
+     
+        }  
+        function nextId(id)
+        {
+          
+            let n=Number(id[1]);
+            n=n+1;
+            let newId='a'+n;
+            for(let i=n+1;i<6;i++)
+            {
+               var obj=document.getElementById(newId);
+                if(obj==null){
+                    newId='a'+i;
+                    console.log(i)
+                  
+                }
+                else{
+                    return newId;
+                   
+                }
+                
+            }
+            
 
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
+            if(obj==null)
+            {
+            newId='a0';
+            }
 
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
+           return newId;
+        }
 
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?mango" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
 
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Mango </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$12</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
 
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
 
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?almond" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
 
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Almond </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
 
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
 
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?fruits,fruit" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-    <!--single Product-->
-    <div class="bg-white overflow-hidden rounded-sm">
-      <!--      Product Image-->
-      <div class="relative group">
-        <img src="https://source.unsplash.com/400x900/?fruits,fruit" class="w-full object-cover "  style="height: 200px" alt="">
-        <div class="icon absolute bg-black bg-opacity-40  inset-0 flex justify-center items-center space-x-2 opacity-0 group-hover:opacity-100 ">
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-search"></i>
-          </a>
-          <a class=" text-lg h-9 w-9 bg-primary hover:bg-gray-800 rounded-full text-white flex items-center justify-center " href="">
-            <i class="fa fa-heart"></i>
-          </a>
-        </div>
-      </div>
-      <!--      Product Image-->
-
-      <!--Product Price &Info-->
-      <div class="product-info">
-        <div class="pt-4 pb-2 px-4">
-          <a href="">
-            <h4 class="text-primary hover:text-gray-800 font-semibold  text-xl">Strawberry </h4>
-          </a>
-          <div class="flex items-baseline space-x-2 font-roboto mb-2 ">
-            <p class="text-xl font-semibold text-gray-800 ">$13</p>
-            <p class="text-sm text-gray-600 line-through">$13</p>
-          </div>
-
-        </div>
-      </div>
-      <button class=" px-0 border rounded-md text-white bg-primary p-2 w-full border-primary hover:bg-white hover:text-primary group  flex justify-center items-center }">
-        <span class="font-semibold">Add to Cart</span>
-        <span class=" h-6 w-6 border border-primary rounded-full  flex items-center justify-center ml-4 group-hover:border-white ">
-                <i class="fa fa-plus"></i>
-              </span>
-      </button>
-      <!--Product Price &Info-->
-
-    </div>
-    <!--single Product End-->
-
-  </div>
-  <!--Product Wrapper End-->
-
-</div>
-<!--Shop Product End-->
-
+   
+</script>
 </body>
 </html>
